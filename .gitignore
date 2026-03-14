@@ -1,3 +1,6 @@
+# Переменные окружения
+.env
+
 # Секретные конфиги
 config/token.txt
 config/admins.txt

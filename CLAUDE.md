@@ -216,6 +216,41 @@ salesbot/
 
 ---
 
+## Деплой в Yandex Cloud (Docker)
+
+### Конфигурация через переменные окружения
+
+`config/loader.py` читает переменные окружения в первую очередь, файлы — как запасной вариант.
+
+| Переменная | Описание |
+|-----------|---------|
+| `BOT_TOKEN` | Токен Telegram-бота |
+| `ADMINS` | Администраторы через запятую: `user1,user2` или числовые ID |
+| `NOTIFY_GROUP_ID` | ID группы уведомлений (отрицательное число) |
+| `ADMIN_GROUP_ID` | ID группы администраторов (отрицательное число) |
+
+### Запуск на Yandex Compute Cloud (VM)
+
+```bash
+# 1. Установить Docker
+curl -fsSL https://get.docker.com | sh
+
+# 2. Клонировать репозиторий
+git clone https://github.com/dremachka-cloud/salesbot.git
+cd salesbot
+
+# 3. Создать .env из примера
+cp .env.example .env
+nano .env  # вписать реальные значения
+
+# 4. Запустить
+docker compose up -d
+```
+
+Данные (`data/`) хранятся на диске VM через Docker volume. При пересборке контейнера данные сохраняются.
+
+---
+
 ## Git-репозиторий
 
 - Репозиторий: https://github.com/dremachka-cloud/salesbot
