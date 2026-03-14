@@ -1,0 +1,27 @@
+# Секретные конфиги
+config/token.txt
+config/admins.txt
+config/group.txt
+config/group_notify.txt
+config/group_admin.txt
+
+# Данные (не версионируем)
+data/orders.json
+data/fsm_storage.pkl
+data/calendar.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Claude
+.claude/
+
+# Виртуальное окружение
+venv/
+.venv/
